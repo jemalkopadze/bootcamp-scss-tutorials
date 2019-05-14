@@ -1,8 +1,10 @@
+@import 'size';
+
 .btn {
     margin-top: 20px;
     margin-right: 29px;
 
-    @include size(14px, 8px, 37px, 9px);
+    @include size(14px, 8px, 37px, 9px, 30px);
     
     background-color: $color-1;
     color: $color-2;
@@ -22,30 +24,27 @@
     }
 
     &.medium {
-        @include size(18px,14px, 95px, 14px, 47px);
+        @include size(18px,14px, 95px, 14px, 90px);
     }
 
     &.large {
-        @include size(26px,26px, 48px, 30px);
+        @include size(26px,26px, 48px, 30px, 40px);
     }
 
     &.x-large {
-        @include size(36px,38px, 102px, 39px);
+        @include size(36px,38px, 102px, 39px, 80px);
     }
     &.round{
-        &-3 {
-            border-radius: 3px;
-        }
-        &-7 {
-            border-radius: 7px;
-        }
-        &-12 {
-            border-radius: 12px;
-        }
-        &-20 {
-            border-radius: 20px;
+
+        $rounds: (3, 7, 12, 20);
+
+        @each $round in $rounds {
+            &-#{$round} {
+                border-radius: $round + px;
+            }
         }
     }
+
     &.bg-color{
         &-1 {
             background-color: $color-1;
