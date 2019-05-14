@@ -1,9 +1,9 @@
-@import 'size';
-
 .btn {
     margin-top: 20px;
     margin-right: 29px;
+
     @include size(14px, 8px, 37px, 9px);
+    
     background-color: $color-1;
     color: $color-2;
     font-family: 'Lato', sans-serif;
